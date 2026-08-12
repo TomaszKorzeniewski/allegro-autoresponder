@@ -1,4 +1,4 @@
-# allegro-buypack-autoresponder
+# allegro-autoresponder
 
 Jedna automatyczna odpowiedź na pierwszą wiadomość kupującego w nowym wątku Allegro
 ("Dzień dobry, dziękujemy za wiadomość..."). Nigdy więcej nic automatycznego w tym
