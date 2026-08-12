@@ -1,0 +1,5 @@
+.env
+.env.lock
+.venv/
+__pycache__/
+state/
