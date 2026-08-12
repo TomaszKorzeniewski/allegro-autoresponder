@@ -40,6 +40,12 @@ AUTH_BASE = "https://allegro.pl/auth/oauth"
 DEVICE_URL = f"{AUTH_BASE}/device"
 TOKEN_URL = f"{AUTH_BASE}/token"
 
+# Musi być identyczny z tym skonfigurowanym w Developer Portal (patrz allegro_client.py).
+USER_AGENT = (
+    "Autoresponder_serwer_Hermes/1.0.0 "
+    "(+https://github.com/TomaszKorzeniewski/allegro-autoresponder)"
+)
+
 # Odświeżamy z wyprzedzeniem, żeby token nie wygasł w trakcie długiej operacji
 # (na przykład masowej aktualizacji stanów na 114 ofertach).
 MARGINES_WYGASNIECIA = 300  # sekundy
@@ -106,7 +112,7 @@ def _client_credentials() -> tuple[str, str]:
 def _basic_auth_header() -> dict:
     client_id, client_secret = _client_credentials()
     creds = base64.b64encode(f"{client_id}:{client_secret}".encode()).decode()
-    return {"Authorization": f"Basic {creds}"}
+    return {"Authorization": f"Basic {creds}", "User-Agent": USER_AGENT}
 
 
 def _zapisz_tokeny(tokens: dict) -> str:

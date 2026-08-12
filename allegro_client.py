@@ -26,6 +26,14 @@ BASE_URL = "https://api.allegro.pl"
 CONTENT_TYPE = "application/vnd.allegro.public.v1+json"
 BETA_CONTENT_TYPE = "application/vnd.allegro.beta.v1+json"
 
+# Wymagane przez Allegro od 2026 (allegro/allegro-api#13126): identyfikacja aplikacji
+# plus URL, gdzie można sprawdzić cel działania. NIE zmieniać po skonfigurowaniu w
+# Developer Portal (Generator User-Agent) - używane jako czynnik whitelistingu.
+USER_AGENT = (
+    "Autoresponder_serwer_Hermes/1.0.0 "
+    "(+https://github.com/TomaszKorzeniewski/allegro-autoresponder)"
+)
+
 # Kody, po których warto spróbować jeszcze raz.
 KODY_PONAWIALNE = (429, 500, 502, 503, 504)
 METODY_IDEMPOTENTNE = ("GET", "PUT", "DELETE", "HEAD")
@@ -77,6 +85,7 @@ class AllegroClient:
             "Authorization": f"Bearer {token}",
             "Accept": accept,
             "Content-Type": CONTENT_TYPE,
+            "User-Agent": USER_AGENT,
         }
 
     @staticmethod
