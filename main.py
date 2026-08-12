@@ -22,7 +22,9 @@ THREADS_PAGE_LIMIT = 20  # API zwraca 422 powyżej 20
 MESSAGES_CHECK_LIMIT = 20
 
 CANNED_REPLY = (
-    "Dzień dobry, dziękujemy za wiadomość. Odpowiemy tak szybko, jak to możliwe."
+    "Dzień dobry,\n"
+    "dziękujemy za wiadomość. Odpowiemy tak szybko, jak to możliwe.\n"
+    "Pozdrawiamy, zespół buy-pack."
 )
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
