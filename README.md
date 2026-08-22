@@ -1,5 +1,7 @@
 # allegro-autoresponder
 
+**Status: wdrożone, działa w produkcji na Dokploy od 12.08.2026.**
+
 Jedna automatyczna odpowiedź na pierwszą wiadomość kupującego w nowym wątku Allegro
 ("Dzień dobry, dziękujemy za wiadomość..."). Nigdy więcej nic automatycznego w tym
 samym wątku. Wyłącznie do spełnienia zasad pierwszego kontaktu, nie do obsługi
@@ -50,3 +52,7 @@ obsłużone — ale traci historię tego, co bot faktycznie zdążył wysłać).
 ## Zmiana treści odpowiedzi
 
 Stała `CANNED_REPLY` w `main.py`. Zmiana wymaga restartu kontenera.
+
+## Licencja
+
+MIT, patrz [LICENSE](LICENSE).
